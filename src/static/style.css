@@ -1,0 +1,22 @@
+/* Remove info at the bottom about how to create a table */
+.wrapped-sql {
+    display: none !important;
+}
+
+/* Footer is not needed for now */
+footer.ft {
+    display: none !important;
+}
+
+/* Link and rowid columns don't look nice on UI. Let's hide them */
+.col-Link {
+    display: none !important;
+}
+.col-rowid {
+    display: none !important;
+}
+
+/* Hide navigation crumbs only on the index/main page */
+body.index > div.not-footer > header > nav > p.crumbs {
+    display: none !important;
+}

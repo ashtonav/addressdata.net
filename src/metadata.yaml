@@ -1,0 +1,21 @@
+title: "AddressData – explore addresses around the world"
+description_html: |-
+  <p>
+    <a href="https://github.com/ashtonav/addressdata" target="_blank" rel="noopener noreferrer" style="display:inline-block">
+      <img src="https://img.shields.io/badge/View_project_on_GitHub-24292e?style=for-the-badge&amp;logo=github&amp;logoColor=white" alt="View project on GitHub">
+    </a>
+  </p>
+  <p>
+    <strong>AddressData.net</strong> contains millions of real addresses and maps for more than <strong>1,500 cities worldwide</strong>. Explore each city on an interactive map, filter by street, house number or postal code, and download complete address datasets in CSV or&nbsp;JSON.
+  </p>
+  <br>
+  <p>
+    Ready to begin? Choose a country below and start exploring its cities.
+  </p>
+  <hr>
+extra_css_urls:
+  - "/static/charcoal-datasette-theme.css"
+  - "/static/style.css"
+extra_js_urls:
+  - "/static/replace.js"
+  - "/static/add-custom-favicon.js"

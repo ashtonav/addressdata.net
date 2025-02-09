@@ -1,0 +1,396 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+/* Based on https://github.com/julien040/charcoal-datasette-theme */
+
+/* Variables */
+:root {
+  --background: #eeeeee;
+  --White: #ffffff;
+  --text: #000000;
+  --text90: rgba(0, 0, 0, 0.9);
+  --text80: rgba(0, 0, 0, 0.8);
+  --text70: rgba(0, 0, 0, 0.7);
+  --text60: rgba(0, 0, 0, 0.6);
+  --text50: rgba(0, 0, 0, 0.5);
+  --text40: rgba(0, 0, 0, 0.4);
+  --text30: rgba(0, 0, 0, 0.3);
+  --text20: rgba(0, 0, 0, 0.2);
+  --text15: rgba(0, 0, 0, 0.15);
+  --text10: rgba(0, 0, 0, 0.1);
+  --header-tight: -0.04em;
+  --body-tight: -0.03em;
+  --subheader-tight: -0.02em;
+}
+
+/* Global Styles */
+
+body {
+  background: var(--background);
+  color: var(--text);
+  font-family: "Inter", sans-serif;
+}
+
+p,
+ul,
+li {
+  letter-spacing: var(--body-tight);
+  color: var(--text70);
+  margin: 0;
+}
+
+li > a:link,
+li > a:visited {
+  color: var(--text);
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  letter-spacing: var(--header-tight);
+  font-weight: 600;
+  margin: 0;
+}
+
+a:link,
+a:visited,
+a {
+  color: var(--text);
+  text-decoration: underline;
+}
+
+.not-footer,
+header,
+footer {
+  padding: 1rem 2rem;
+}
+
+/* Reduce padding for smaller screens */
+@media (max-width: 600px) {
+  .not-footer,
+  header,
+  footer {
+    padding: 0.35rem;
+  }
+}
+
+/* Header */
+
+header {
+  background: var(--background);
+  color: var(--text);
+  padding: 0rem 1rem;
+  padding-top: 1rem;
+}
+
+header nav .crumbs a {
+  color: var(--text60) !important;
+  font-weight: 500;
+  text-decoration: none !important;
+}
+
+header nav .crumbs a:last-child {
+  color: var(--text90) !important;
+  font-weight: 500;
+}
+
+/* Page header */
+
+.page-header > h1:first-of-type {
+  border-left: 0px !important; /* To remove inline style in by item page */
+  padding: 0px !important; /* To remove inline style */
+  margin: 0px;
+  margin-top: -8px;
+}
+
+.page-header h1 {
+  font-size: 2.3rem;
+  margin: 0;
+}
+
+.metadata-description {
+  font-size: 0.95rem;
+  color: var(--text60);
+  font-weight: 400;
+  letter-spacing: var(--subheader-tight);
+  margin-bottom: 0.5em;
+  margin-top: -6px;
+}
+
+.page-header + p,
+.page-header + p a {
+  color: var(--text70);
+  font-size: 0.95em;
+}
+
+.content > p:first-of-type {
+  margin: 0;
+}
+
+.content > h3 {
+  color: var(--text60, rgba(0, 0, 0, 0.6));
+  font-family: Inter;
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: var(--subheader-tight);
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+/* Filter */
+.select-wrapper {
+  border: 0;
+  border-radius: 6px;
+}
+
+.select-wrapper select,
+.filters input.filter-value,
+form input[type="search"],
+form input[type="text"] {
+  background: var(--White, #fff);
+  border-radius: 6px;
+  padding: 0.6rem 1rem;
+  border: 0;
+}
+
+form label {
+  font-weight: 600;
+}
+
+div.filter-row {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+/* The small cross to remove a filter */
+div.filter-row > a:last-child[href="#"] {
+  margin-left: 4px;
+}
+
+form input[type="submit"],
+button,
+form button[type="button"] {
+  background: var(--White, #fff);
+  transition: all 0.2s;
+  border-radius: 6px;
+  border: none;
+  padding: 0.6rem 2rem;
+  color: var(--text);
+  font-weight: 590;
+  letter-spacing: var(--subheader-tight);
+  font-size: 0.9rem;
+}
+
+form input[type="submit"]:hover,
+button:hover,
+form button[type="button"]:hover {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+form.filters,
+form.sql {
+  margin-bottom: 1rem;
+}
+
+/* Code editor */
+div.CodeMirror {
+  margin-bottom: 0.5rem;
+  margin-top: 0.2rem;
+  border: none;
+  border-radius: 6px;
+  border-collapse: separate;
+  overflow: hidden;
+}
+
+form.sql {
+  padding-top: 1rem;
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  overflow: hidden; /* To hide the border-radius even when the background is set with child elements */
+}
+
+table thead tr th {
+  padding: 0.8rem 1rem;
+  background-color: var(--White, #fff);
+}
+
+table thead tr th a:link,
+table thead tr th a:visited,
+table thead tr th {
+  color: var(--text);
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: var(--subheader-tight);
+  text-decoration: none;
+}
+
+table tbody tr td {
+  padding: 0.5rem 1rem;
+  border-top: 1px solid var(--background);
+  font-size: 0.9rem;
+  color: var(--text80);
+}
+
+table tbody tr:nth-child(odd) {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+table tbody tr:nth-child(even) {
+  background-color: var(--White, #fff);
+}
+
+table tbody tr td a:link,
+table tbody tr td a:visited {
+  /* Primary key link */
+  font-size: 0.9rem;
+  text-decoration: none;
+  font-weight: 580;
+  color: var(--text80);
+}
+
+@media only screen and (max-width: 576px) {
+  table.rows-and-columns tbody tr {
+    padding: 0.8rem;
+    background-color: var(--White);
+    border: none;
+    border-radius: 6px;
+  }
+
+  table.rows-and-columns tbody tr td {
+    padding-bottom: 0.5rem;
+    margin-top: 0.2rem;
+  }
+}
+
+/* Move the next page button to the middle */
+div.table-wrapper + p {
+  text-align: center;
+  color: var(--text50);
+}
+
+div.table-wrapper + p > a {
+  color: var(--text70);
+  font-size: 0.9rem;
+}
+
+/* Zero results */
+p.zero-results {
+  border-radius: 6px;
+  background: var(--White, #fff);
+  padding: 1rem;
+  border: none;
+  margin-top: 1rem;
+  font-style: normal;
+}
+
+/* Export */
+
+div.advanced-export {
+  padding: 1rem;
+  box-shadow: none;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+div.advanced-export > h3 {
+  margin-bottom: 0.3rem;
+}
+
+div.advanced-export input[type="submit"] {
+  background: rgba(0, 0, 0, 0.1);
+  transition: all 0.2s;
+  padding: 0.6rem 1rem;
+}
+
+div.advanced-export input[type="submit"]:hover {
+  background: rgba(0, 0, 0, 0.15);
+}
+
+div.advanced-export label {
+  font-weight: 500;
+}
+
+/* Code for table creation */
+pre.wrapped-sql {
+  background: var(--White, #fff);
+  border-radius: 6px;
+  padding: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  overflow: auto;
+}
+
+pre.wrapped-sql::before {
+  content: "How to create this table?";
+  display: block;
+  font-weight: 600;
+  font-family: Inter;
+  letter-spacing: var(--header-tight);
+  margin-bottom: 0.2rem;
+}
+
+/* Footer */
+footer.ft {
+  background: var(--background);
+  color: var(--text);
+  padding: 0rem 3rem;
+  margin: 1rem 0;
+  font-size: 0.9rem;
+}
+footer.ft a:link,
+footer.ft a:visited {
+  color: var(--text);
+  text-decoration: underline;
+}
+
+/* Add a small ad */
+footer.ft::after {
+  content: " · Charcoal theme";
+}
+
+/* Table selection */
+
+div.db-table {
+  margin-top: 1rem;
+  border-bottom: 1px solid var(--text15);
+}
+/* Reduce the text size of "n rows" */
+div.db-table > p:last-of-type {
+  font-size: 0.9rem;
+  color: var(--text50);
+}
+
+#views {
+  margin-top: 1rem;
+}
+
+ul.bullets li {
+  margin: 0;
+}
+
+/* Dropdown menu */
+div.dropdown-menu {
+  padding: 0.7rem;
+  border-radius: 6px;
+  background: var(--White, #fff);
+  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.08);
+  border: none;
+  font-size: 0.95rem;
+}
+
+div.dropdown-menu > ul > li {
+  padding: 3px;
+}
