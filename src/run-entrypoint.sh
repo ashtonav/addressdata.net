@@ -3,7 +3,7 @@ set -e
 
 echo "Scanning for .db files under 'databases'..."
 
-# Find all .db files under ./databases/ and sort them case‑insensitively
+# Find all .db files under ./databases/ and sort them case-insensitively
 mapfile -t DB_PATHS < <(
   find databases -type f -name '*.db' \
   | sort -f       # -f = ignore case

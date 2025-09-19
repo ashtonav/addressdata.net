@@ -1,37 +1,39 @@
 # AddressData.net
 
-<img src="docs/logo.svg" alt="Description" width="105">
+<img src="docs/logo.svg" alt="AddressData.net logo" width="105">
 
-[![deployment](https://github.com/ashtonav/addressdata.net/actions/workflows/addressdata-app-AutoDeployTrigger-97565f4e-b488-43b4-bd79-af6dc76a766b.yml/badge.svg)](https://github.com/ashtonav/addressdata-frontend/actions/workflows/addressdata-app-AutoDeployTrigger-97565f4e-b488-43b4-bd79-af6dc76a766b.yml)
-[![license](https://img.shields.io/github/license/ashtonav/addressdata.net.svg)](LICENSE)
+[![deployment](https://github.com/ashtonav/addressdata.net/actions/workflows/addressdata-app-AutoDeployTrigger-97565f4e-b488-43b4-bd79-af6dc76a766b.yml/badge.svg)](https://github.com/ashtonav/addressdata.net/actions/workflows/addressdata-app-AutoDeployTrigger-97565f4e-b488-43b4-bd79-af6dc76a766b.yml)
+[![license](https://img.shields.io/github/license/ashtonav/addressdata.net.svg)](CODE_LICENSE)
 
-This code is used to power [AddressData.net](https://AddressData.net), a site that displays all known addresses by city, alongside an interactive map.
+This repository contains the source code for [AddressData.net](https://addressdata.net) — a website that displays street addresses by city alongside an interactive map.
 
-Currently, [AddressData.net](https://AddressData.net) contains millions of addresses for over 1,500 cities around the world.
+- **Self-hosting:** run your own instance; see [Installation](#installation). A self-hosted instance is **functionally identical** to the public site.
+- **Coverage:** millions of addresses across 1,500+ cities worldwide.
+- **Baked Data:** no external databases or services are required. A read-only SQLite database containing all addresses is bundled inside the Docker image. See: [the “Baked Data” architectural pattern](https://simonwillison.net/2021/Jul/28/baked-data/).
+
+## Screenshots
+
+![Screenshot 1](docs/screenshot-1.png)
+
+![Screenshot 2](docs/screenshot-2.png)
 
 ## Installation
 
-### How to run
-1. From the root folder of the project, run the following commands:
-
-2. ```bash
+### Using Docker (recommended for self-hosting)
+1. From the repository root, build and run the container:
+   ```bash
    docker build -t addressdatanet ./src
    docker run -it -p 8001:8001 addressdatanet
-   ```
-2. The API can be accessed at [http://localhost:8001](http://localhost:8001).
+    ```
 
-FYI: The build script is a bit slow. It may take 20 minutes or more for docker build to be completed. 
+2. The website can be accessed at [http://localhost:8001](http://localhost:8001).
+
+> **Note:** The Docker build can take 20 minutes or more to complete.
 
 ## Acknowledgments
 
-- **Datasette**:  
-  [Datasette](https://docs.datasette.io/en/stable/) is used to display CSV data on a website. It offers a lightweight, flexible way to query and visualize structured data, making it easier to explore and share the address information we collect.
-
-- **OpenStreetMap**
-  This repository includes data extracted from OpenStreetMap (via Overpass API). **Contains information from OpenStreetMap, © OpenStreetMap contributors.** Data is available under the **Open Database License (ODbL) 1.0**.
-
-- **Datasette Charcoal Theme** by https://github.com/julien040/charcoal-datasette-theme.
-
+* **[Datasette](https://datasette.io/):**
+* **[Datasette Charcoal Theme](https://github.com/julien040/charcoal-datasette-theme)**
 
 ## Contributing
 
@@ -39,5 +41,5 @@ Pull requests are accepted.
 
 ## License
 
-- The code itself is licensed under [MIT](https://choosealicense.com/licenses/mit/).
-- The street addresses were retrieved using github.com/ashtonav/addressdata and are licensed/available under **Open Database License (ODbL) 1.0**.
+* **Code:** [MIT](https://choosealicense.com/licenses/mit/).
+* **Data:** Street-address data retrieved using the [AddressData tool](https://github.com/ashtonav/addressdata) includes information from OpenStreetMap. © OpenStreetMap contributors. The data is available under the Open Database License (ODbL) v1.0.

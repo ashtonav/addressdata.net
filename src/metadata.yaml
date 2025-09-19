@@ -19,3 +19,5 @@ extra_css_urls:
 extra_js_urls:
   - "/static/replace.js"
   - "/static/add-custom-favicon.js"
+license: "© OpenStreetMap contributors — ODbL 1.0"
+license_url: "https://opendatacommons.org/licenses/odbl/1-0/"
