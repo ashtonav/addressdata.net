@@ -32,7 +32,7 @@ This repository contains the source code for [AddressData.net](https://addressda
 
 ## Acknowledgments
 
-* **[Datasette](https://datasette.io/):**
+* **[Datasette](https://datasette.io/)**
 * **[Datasette Charcoal Theme](https://github.com/julien040/charcoal-datasette-theme)**
 
 ## Contributing
