@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 set -e
-
 echo "Scanning for .db files under 'databases'..."
 
 # Find all .db files under ./databases/ and sort them case-insensitively
