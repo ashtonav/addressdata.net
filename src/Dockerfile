@@ -12,9 +12,10 @@ RUN pwsh ./initialize-databases.ps1
 RUN rm -r csv
 
 # Final image
-FROM datasetteproject/datasette:0.65.1 AS final-image
+FROM datasetteproject/datasette:0.65.5 AS final-image
 # 3. Install dependencies on final image
 RUN pip install datasette-cluster-map
+RUN pip install datasette-referrer-policy
 # 4. Copy files over from build image
 WORKDIR app
 COPY --from=build-image build .
